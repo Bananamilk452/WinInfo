@@ -1,2 +1,0 @@
-# WinInfo
-Windows Info Tool
