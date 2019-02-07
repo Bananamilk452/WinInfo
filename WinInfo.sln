@@ -20,11 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_AssemblyInfoFilename = WinInfo\Properties\AssemblyInfo.cs
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_UpdateAssemblyVersion = True
-		BuildVersion_BuildVersioningStyle = DeltaBaseYear.DayStamp.Increment.None
-		BuildVersion_StartDate = 2019/2/7
 		SolutionGuid = {B0DA6B07-0267-4232-98E8-63ACBBE841FD}
 	EndGlobalSection
 EndGlobal
