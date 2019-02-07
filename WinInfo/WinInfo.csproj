@@ -79,4 +79,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_AssemblyInfoFilename="Properties\AssemblyInfo.cs" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="DeltaBaseYear.DayStamp.Increment.None" BuildVersion_StartDate="2019/2/7" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

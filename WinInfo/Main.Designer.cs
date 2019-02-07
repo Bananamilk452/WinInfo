@@ -32,14 +32,17 @@
             this.TabControl = new System.Windows.Forms.TabControl();
             this.dashboard = new System.Windows.Forms.TabPage();
             this.OSVersion = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CPUPage = new System.Windows.Forms.TabPage();
             this.H1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MinButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ProgramVersion = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TabControl.SuspendLayout();
             this.dashboard.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +50,7 @@
             // TabControl
             // 
             this.TabControl.Controls.Add(this.dashboard);
-            this.TabControl.Controls.Add(this.tabPage2);
+            this.TabControl.Controls.Add(this.CPUPage);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.TabControl.Font = new System.Drawing.Font("맑은 고딕", 13F);
             this.TabControl.Location = new System.Drawing.Point(0, 83);
@@ -72,21 +75,21 @@
             // 
             this.OSVersion.AutoSize = true;
             this.OSVersion.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.OSVersion.Location = new System.Drawing.Point(8, 12);
+            this.OSVersion.Location = new System.Drawing.Point(3, 12);
             this.OSVersion.Name = "OSVersion";
             this.OSVersion.Size = new System.Drawing.Size(97, 19);
             this.OSVersion.TabIndex = 1;
             this.OSVersion.Text = "윈도우 버전 : ";
             // 
-            // tabPage2
+            // CPUPage
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(803, 369);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.CPUPage.Location = new System.Drawing.Point(4, 32);
+            this.CPUPage.Name = "CPUPage";
+            this.CPUPage.Padding = new System.Windows.Forms.Padding(3);
+            this.CPUPage.Size = new System.Drawing.Size(803, 363);
+            this.CPUPage.TabIndex = 1;
+            this.CPUPage.Text = "CPU";
+            this.CPUPage.UseVisualStyleBackColor = true;
             // 
             // H1
             // 
@@ -101,11 +104,46 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.MinButton);
+            this.panel1.Controls.Add(this.CloseButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 10);
             this.panel1.TabIndex = 2;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // MinButton
+            // 
+            this.MinButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.MinButton.FlatAppearance.BorderSize = 0;
+            this.MinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinButton.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.MinButton.ForeColor = System.Drawing.Color.Black;
+            this.MinButton.Location = new System.Drawing.Point(760, 0);
+            this.MinButton.Name = "MinButton";
+            this.MinButton.Size = new System.Drawing.Size(26, 10);
+            this.MinButton.TabIndex = 5;
+            this.MinButton.TabStop = false;
+            this.MinButton.Text = "-";
+            this.MinButton.UseVisualStyleBackColor = false;
+            this.MinButton.Click += new System.EventHandler(this.MinButton_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.Color.Red;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.CloseButton.ForeColor = System.Drawing.Color.Black;
+            this.CloseButton.Location = new System.Drawing.Point(786, 0);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(26, 10);
+            this.CloseButton.TabIndex = 4;
+            this.CloseButton.TabStop = false;
+            this.CloseButton.Text = "X";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // panel2
             // 
@@ -117,6 +155,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(811, 73);
             this.panel2.TabIndex = 3;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // ProgramVersion
+            // 
+            this.ProgramVersion.AutoSize = true;
+            this.ProgramVersion.Location = new System.Drawing.Point(74, 41);
+            this.ProgramVersion.Name = "ProgramVersion";
+            this.ProgramVersion.Size = new System.Drawing.Size(99, 15);
+            this.ProgramVersion.TabIndex = 3;
+            this.ProgramVersion.Text = "version unknown";
             // 
             // pictureBox1
             // 
@@ -126,15 +174,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // ProgramVersion
-            // 
-            this.ProgramVersion.AutoSize = true;
-            this.ProgramVersion.Location = new System.Drawing.Point(74, 41);
-            this.ProgramVersion.Name = "ProgramVersion";
-            this.ProgramVersion.Size = new System.Drawing.Size(176, 15);
-            this.ProgramVersion.TabIndex = 3;
-            this.ProgramVersion.Text = "version 1.0.0 (release 915de24)";
             // 
             // MainForm
             // 
@@ -149,10 +188,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "WinInfo";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.TabControl.ResumeLayout(false);
             this.dashboard.ResumeLayout(false);
             this.dashboard.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -164,13 +204,15 @@
 
         private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TabPage dashboard;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage CPUPage;
         private System.Windows.Forms.Label H1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label OSVersion;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label ProgramVersion;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button MinButton;
     }
 }
 
